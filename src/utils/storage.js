@@ -7,16 +7,15 @@ export const getEmployees = () => {
 
 export const saveEmployee = (employee) => {
   const employees = getEmployees();
-  if (employee.id) {
-    // Edit
-    const index = employees.findIndex(e => e.id === employee.id);
+  const index = employees.findIndex(e => e.id === employee.id);
+  
+  if (index !== -1) {
     employees[index] = employee;
   } else {
-    // Add
-    employee.id = Date.now().toString();
+    if(!employee.id) employee.id = Date.now().toString(); 
     employees.push(employee);
   }
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(employees));
+  localStorage.setItem('employee_data', JSON.stringify(employees));
 };
 
 export const deleteEmployee = (id) => {
