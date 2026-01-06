@@ -46,7 +46,7 @@ Follow these steps to run the project locally.
 
 1.  **Clone the repository**
     ```bash
-    git clone <repository_url>
+    git clone https://github.com/AnwarUlHuda/assignment_bookxpert
     cd employee-dashboard
     ```
 
